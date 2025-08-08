@@ -1,16 +1,19 @@
 import { login } from "./js/login.js";
 import { dashboard } from "./js/dashboard.js";
 import { citas } from "./js/citas.js";
-import { patientsView } from "./js/patients.js";
 import { doctorsView } from "./js/doctors.js";
+import { viewClients } from "./js/patients.js"
+
 
 const routes = {
-    "#/": login,
+    "": login,
     "#/dashboard": dashboard,
     "#/dashboard/citas": citas, 
-    "#/dashboard/pacientes": patientsView,
+    "#/dashboard/pacientes":viewClients,
     "#/dashboard/medicos": doctorsView
 }
+
+
 
 // Función que realiza el cambio de vistas SPA
 function render() {
@@ -21,11 +24,17 @@ function render() {
     const isAuthenticated = sessionStorage.getItem("auth") === "true";
     const isProtectedRoute = path.includes("/dashboard");
     
+    //Este codigo hace que si la ruta es protegida y el usuario no esta logeado, lo manda para login 
     if (isProtectedRoute && !isAuthenticated) {
-        window.location.hash = "#/";
+        window.location.hash = "";
+
+
+        //El return evita que se muestre por milisegundos el contendio que no debe mostrarse
         return;
     }
     
+
+    //Si sí hay una funcion asociada a la ruta en la que esta el usuario entonces ejecuta el spa
     if (route) {
         route();
     } else {
@@ -53,6 +62,12 @@ document.addEventListener("click", (event) => {
 
 // Renderizar la página inicial
 render();
+
+
+
+if(sessionStorage.getItem("auth")!="true"){
+    routes[""]
+}
 
 
 

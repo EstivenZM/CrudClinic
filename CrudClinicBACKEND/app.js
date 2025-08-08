@@ -87,9 +87,9 @@ app.get('/pacientes', async (req, res) => {
 
 
 // ---------------------------------- ADMIN -------------------------------------
-app.get('/admin', async (req, res) => {
+app.get('/administrador', async (req, res) => {
     let connection = await connectionBD()
-    let [filas] = await connection.execute(`SELECT * FROM admin`)
+    let [filas] = await connection.execute(`SELECT * FROM administrador`)
     await connection.end()
     res.json(filas)
 })

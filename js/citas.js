@@ -1,6 +1,6 @@
 export async function citas() {
     const content = document.getElementById("content");
-    content.innerHTML = `
+    content.innerHTML += `
         <div class="container mt-5">
             <h2 class="mb-4">Lista de Citas</h2>
             <div class="table-responsive">

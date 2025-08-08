@@ -1,16 +1,50 @@
-export async function newPatient(body) {
+export async function getPatients() {
     try {
-        const res = await fetch("http://localhost:3000/patients", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(body)
-        })
+        const response = await fetch("http://localhost:3000/pacientes");
+        const data = await response.json();
+        return data
     } catch (error) {
-        console.error("ERROR AL MANDAR PACIENTE", error)
+        console.error("Error en GET:", error);
     }
 }
+
+
+export async function viewClients() {
+    let content = document.getElementById("contentDashboard")
+    content.innerHTML = `
+    <div class="w-100 d-flex justify-content-end">
+        <button class="btn btn-primary" type="button">Crear paciente</button>
+    </div>
+    <div class="container mt-5">
+        <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre completo</th>
+                <th scope="col">Correo</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+    </div>`
+
+    let tbody = document.getElementById("tbody")
+    let data = await getPatients()
+    data.forEach(client => {
+        tbody.innerHTML += `    
+    <tr>
+      <th>${client.id_paciente}</th>
+      <td>${client.nombre_completo}</td>
+      <td>${client.correo}</td>
+    </tr>`
+    });
+}
+
+
+
+
 
 
 
