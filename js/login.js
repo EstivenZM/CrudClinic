@@ -24,20 +24,22 @@ export function login() {
 
     let buttonLogin = document.getElementById("buttonLogin")
 
-    buttonLogin.addEventListener("click", (e) => {
+    buttonLogin.addEventListener("click", async (e) => {
         e.preventDefault()
         let alert = document.getElementById("alert")
         let email = document.getElementById("email").value
         let password = document.getElementById("password").value
-        let search = searchAdmin()
+        let search = await searchAdmin()
+        console.log(search);
 
         //Found sera igual al usuario que coincida con lo ingresado en los inputs
-        const found = search.find(admin => (admin.email == email && admin.password == password))
+        const found = search.find(admin => admin.correo == email && admin.contrasena == password)
 
 
         if(found){
             sessionStorage.setItem("auth", "true")
             window.location.hash ="#/dashboard"
+            console.log("Inicio sesion")
 
         } else{
             alert.style="color: red"
@@ -51,7 +53,7 @@ export function login() {
 
     async function searchAdmin() {
         try {
-            const response = await fetch("http://localhost:3000/admin");
+            const response = await fetch("http://localhost:3000/administrador");
             const data = await response.json();
             return data
         } catch (error) {
