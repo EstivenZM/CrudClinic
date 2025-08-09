@@ -21,8 +21,8 @@ El proyecto incluye un **frontend** desarrollado con HTML, CSS y JavaScript, y u
 ## 🛠️ Tecnologías utilizadas
 
 ### **Frontend**
-- HTML5
-- CSS3 (con estilos personalizados en `style.css`)
+- HTML
+- CSS
 - JavaScript (módulos para cada sección: citas, pacientes, doctores, login, dashboard)
 
 ### **Backend**
