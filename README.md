@@ -35,26 +35,8 @@ El proyecto incluye un **frontend** desarrollado con HTML, CSS y JavaScript, y u
 
 ## 📂 Estructura del proyecto
 
-CrudClinic-main/
-│── index.html              # Página principal del frontend
-│── main.js                 # Script principal
-│── package.json            # Configuración de dependencias frontend
-│── package-lock.json
-│
-├── css/
-│   └── style.css           # Estilos generales
-│
-├── js/
-│   ├── citas.js            # Lógica para la gestión de citas
-│   ├── dashboard.js        # Lógica para la vista del dashboard
-│   ├── doctors.js          # Gestión de doctores
-│   ├── login.js            # Manejo de autenticación
-│   ├── patients.js         # Gestión de pacientes
-│
-└── CrudClinicBACKEND/      # Backend del proyecto
-    ├── app.js              # Servidor Node.js con Express
-    ├── package.json        # Dependencias del backend
-    ├── package-lock.json
+<img width="538" height="428" alt="image" src="https://github.com/user-attachments/assets/eeec98a5-7eea-4a6a-a411-faeee7edb0f1" />
+
     
 ⚙️ Instalación y configuración
 1️⃣ Clonar el repositorio
