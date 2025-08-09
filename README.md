@@ -51,17 +51,6 @@ npm install
 3️⃣ Configurar variables de entorno
 Crear un archivo .env en la carpeta CrudClinicBACKEND con la configuración de conexión a la base de datos y el puerto:
 
-env
-
-PORT=3000
-DB_HOST=localhost
-DB_USER=usuario
-DB_PASS=contraseña
-DB_NAME=crudclinic
-4️⃣ Iniciar el backend
-bash
-
-npm start
 El servidor estará disponible en:
 http://localhost:3000
 
@@ -84,7 +73,7 @@ PUT	/citas/:id	Editar cita
 DELETE	/citas/:id	Cancelar cita
 
 🖥️ Uso
-Inicia sesión como usuario autorizado.
+Inicia sesión como usuario autorizado (Admin).
 
 Accede al Dashboard para ver la información general.
 
@@ -96,5 +85,5 @@ Pacientes: gestionar información de pacientes.
 
 Citas: agendar, modificar o cancelar citas.
 
-Si es necesario, importa datos masivamente desde un archivo CSV/XLSX.
+Si es necesario, importa datos masivamente desde un archivo CSV.
 
