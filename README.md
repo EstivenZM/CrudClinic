@@ -60,17 +60,41 @@ Abrir el archivo index.html en el navegador o servirlo con Live Server.
 📌 Endpoints principales (Backend API)
 Método	Endpoint	Descripción
 GET	/doctors	Listar doctores
+
+
 POST	/doctors	Agregar doctor
+
+
 PUT	/doctors/:id	Editar doctor
+
+
 DELETE	/doctors/:id	Eliminar doctor
+
+
 GET	/patients	Listar pacientes
+
+
 POST	/patients	Registrar paciente
+
+
 PUT	/patients/:id	Editar paciente
+
+
 DELETE	/patients/:id	Eliminar paciente
+
+
 GET	/citas	Listar citas
+
+
 POST	/citas	Agendar cita
+
+
 PUT	/citas/:id	Editar cita
+
+
 DELETE	/citas/:id	Cancelar cita
+
+
 
 🖥️ Uso
 Inicia sesión como usuario autorizado (Admin).
